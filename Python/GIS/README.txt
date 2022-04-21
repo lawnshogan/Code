@@ -7,4 +7,4 @@ https://gis.stackexchange.com/questions/123054/legal-description-polygon-mapping
 
 BatchExportAttachments: Usage - There are no geoprocessing tools that allow users to export and save all attachments locally. 
 User has collected point data cointaining jpegs - needs to easily transfer hundreds of photos to one folder with one click.
-
+https://support.esri.com/en/technical-article/000011912
