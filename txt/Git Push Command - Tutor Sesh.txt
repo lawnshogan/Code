@@ -1,0 +1,24 @@
+NOTE - cd + TAB key = current directory
+
+
+# Set directory
+$ cd C:/Users/shawn/DataScienceMaster/Modules/Module_2/repository
+
+
+# Clone github repository (Http)
+$ git clone https://github.com/lawnshogan/stock-analysis.git
+
+# Add to staging
+$ git add .
+
+# Check status
+$ git status
+
+# Commit with message "adding VBA Challenge excel file"
+$ git commit -m "adding VBA Challenge excel file"
+
+# Push the new edits to repository
+$ git push
+
+# If you want to pull edits down to your desktop
+$ git pull
