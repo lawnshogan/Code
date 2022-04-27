@@ -195,3 +195,117 @@ ax.set_xticks(np.arange(0, 51, step=5.0))
 # Create minor ticks at an increment of 1.
 ax.xaxis.set_minor_locator(MultipleLocator(1))
 plt.show()
+
+
+
+
+
+# 5.1.4 Skill Drill - Annotate Charts (Pyplot)
+
+%matplotlib inline
+import matplotlib.pyplot as plt
+
+x_axis = ["Jan", "Feb", "Mar", "April", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec"]
+y_axis = [10.02, 23.24, 39.20, 35.42, 32.34, 27.04, 43.82, 10.56, 11.85, 27.90, 20.71, 20.09]
+
+
+plt.plot(x_axis, y_axis, marker="D", color="green", linewidth=2, label='Boston')
+plt.xlabel("Date")
+plt.ylabel("Fare($)")
+plt.ylim(0, 50)
+plt.title("PyBer Fare by Month")
+plt.grid()
+plt.legend(["Boston"])
+
+
+
+ax = plt.axes()
+ax.plot(x_axis, y_axis, marker="+", color="green", linewidth=2, label='Boston')
+
+ax.set_ylim(0, 45)
+ax.set_title("PyBer Fare by Month")
+ax.set_xlabel('Date')
+ax.set_ylabel('Fare ($)')
+ax.legend()
+ax.grid()
+
+
+
+# 5.1.5 Skill Drill - Horizontal Bar Graph (Pyplot)
+plt.barh(x_axis, y_axis, color= "magenta", label= "Boston")
+plt.gca().invert_yaxis()
+plt.title("PyBer Fare by Month")
+plt.xlabel("Fare ($)")
+plt.ylabel("Date")
+plt.legend()
+
+# 5.1.6 Skill Drill - Horizontal Bar Graph (Object-Oriented)
+fig, ax = plt.subplots()
+ax.barh(x_axis, y_axis, color= "cyan", label= "Chicago")
+plt.gca().invert_yaxis()
+plt.title("PyBer Fare by Month")
+plt.xlabel("Fare ($)")
+plt.ylabel("Date")
+plt.legend()
+
+# 5.1.7 Skill Drill - Scatter Plots (Pyplot)
+plt.scatter(x_axis, y_axis)
+plt.plot(y_axis, x_axis, 'o', c="red", label="Chicago")
+plt.gca().invert_yaxis()
+plt.xlim(0, 50)
+plt.title("PyBer Fare by Month")
+plt.xlabel("Fare ($)")
+plt.ylabel("Date")
+plt.legend()
+
+# 5.1.7 Skill Drill - Bubble Charts (Object-Oriented)
+# Change the color of the markers to sky blue.
+# Change the size of the markers to 5 times each data point.
+# Make the color 20% transparent.
+# Add a black edge color to the circles.
+# Make the linewidth of the circles 2 points.
+# Add a legend for the city of Boston.
+# Add a title.
+# Switch the axis so that the Fare data is on the x-axis.
+# Add a limit for the x-axis data.
+# Invert the y-axis so that January is at the top.
+fig, ax = plt.subplots()
+ax.scatter(y_axis, 
+           x_axis, 
+           fc='#75bbfd', 
+           alpha= 0.2, 
+           edgecolor="black", 
+           linewidth=2, 
+           s = [i * 5 for i in y_axis], 
+           label="Boston")
+plt.gca().invert_yaxis()
+plt.xlim(0, 50)
+plt.title("PyBer Fare by Month")
+plt.xlabel("Fare ($)")
+plt.ylabel("Date")
+plt.legend()
+
+# 5.1.8 Skill Drill - Pie Chart (Object-Oriented)
+# Add a percentage to one decimal place to each wedge of the pie.
+# Increase the figure size to 8x8.
+# Explode the two highest percentage months.
+# Add a shadow.
+# Add a start angle so that January is at the top.
+# Reverse the order so that the month order is in a clockwise direction.
+# Add new colors of your own choosing or use the colors from the previous pie chart.
+fig, ax = plt.subplots(figsize=(8,8))
+colors = ["slateblue", "magenta", "lightblue", "green", 
+          "yellowgreen", "greenyellow", "yellow", "orange", 
+          "gold", "indianred", "tomato", "mistyrose"]
+explode_values = (0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0, 0)
+plt.pie(y_axis,
+       explode=explode_values,
+       colors=colors,
+       shadow=True,
+       startangle=90,
+       counterclock=False,
+       labels=x_axis,
+       autopct='%.1f%%')
+
+plt.show()
+
