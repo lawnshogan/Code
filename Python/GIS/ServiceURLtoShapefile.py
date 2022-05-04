@@ -32,7 +32,8 @@ username = 'martinwi'
 password = getpass()
 
 itemURLs = ['https://services5.arcgis.com/rqsYvPKZmvSrSWbw/ArcGIS/rest/services/SLB_Leases_ALL_Trustlands2_View/FeatureServer/0'
-            ,'https://services5.arcgis.com/rqsYvPKZmvSrSWbw/ArcGIS/rest/services/SLB_Ownership_Trustlands_2_VIEW/FeatureServer/1']
+            ,'https://services5.arcgis.com/rqsYvPKZmvSrSWbw/ArcGIS/rest/services/SLB_Ownership_Trustlands_2_VIEW/FeatureServer/1'
+            ]
 groupID = '94bd8c89cc624bcd8ceac6c515f72973'
 
 ########################################
