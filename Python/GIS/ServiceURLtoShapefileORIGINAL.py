@@ -1,3 +1,4 @@
+########################################
 
 '''
 Config items:
@@ -30,14 +31,10 @@ url = 'https://arcgis.com'
 username = 'martinwi'
 password = getpass()
 
-itemURLs = ['https://services1.arcgis.com/qkYTKlfKEB2WYL01/arcgis/rest/services/FMPro_Final_Loaded/FeatureServer/1'
-            ,'https://services1.arcgis.com/qkYTKlfKEB2WYL01/arcgis/rest/services/FMPro_Final_Loaded/FeatureServer/3'
-            ,'https://services1.arcgis.com/qkYTKlfKEB2WYL01/ArcGIS/rest/services/TreatyWaters_WFL1/FeatureServer/1']
-
+itemURLs = ['https://services5.arcgis.com/rqsYvPKZmvSrSWbw/ArcGIS/rest/services/SLB_Leases_ALL_Trustlands2_View/FeatureServer/0'
+            ,'https://services5.arcgis.com/rqsYvPKZmvSrSWbw/ArcGIS/rest/services/SLB_Ownership_Trustlands_2_VIEW/FeatureServer/1'
+            ]
 groupID = '94bd8c89cc624bcd8ceac6c515f72973'
-
-### Thumbnail variable can be a path or URL to thumbnail image ###
-thumbnail = 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Flag_of_Colorado.svg/255px-Flag_of_Colorado.svg.png'
 
 ########################################
 
@@ -67,7 +64,8 @@ def ServiceURLtoShapefile():
             for layer in item.layers:
                 if layer.url in updatedURLs:
                     print('   '+str(layer))
-                    name = layer.properties.name
+                    nameSplit = layer.url.split('/')
+                    name = nameSplit[7]+'_'+nameSplit[-1]
 
                     x = []
                     x.append(name)
@@ -78,15 +76,13 @@ def ServiceURLtoShapefile():
                             x.remove(name)
                             c.delete()
                             shp = arcgis.features.manage_data.extract_data([layer],data_format='ShapeFile',output_name=name)
-                            shp.share(groups=groupID)
-                            shp.update(thumbnail=thumbnail)
-                            print('      {} REPLACED'.format(name))
+                            shp.share(groups=groupID,everyone=True)
+                            print('   REPLACED')
                     for i in x:
                         if name == i:
                             shp = arcgis.features.manage_data.extract_data([layer],data_format='ShapeFile',output_name=name)
-                            shp.share(groups=groupID)
-                            shp.update(thumbnail=thumbnail)
-                            print('      {} ADDED'.format(name))
+                            shp.share(groups=groupID,everyone=True)
+                            print('   ADDED')
                         
 ########################################
 
