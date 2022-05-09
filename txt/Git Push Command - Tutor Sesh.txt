@@ -22,3 +22,7 @@ $ git push
 
 # If you want to pull edits down to your desktop
 $ git pull
+
+
+# REDO a commit
+git reset HEAD~
