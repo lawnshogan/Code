@@ -1,0 +1,24 @@
+Connect to Virtual Environment
+
+Type 'mongod' to activate MongoDB
+
+Open new terminal and type 'mongo'
+
+Type 'use practicedb' to create a new practice DB called 'practicedb'
+
+Type 'db' to see active database
+
+Insert data or document using syntax 'db.collectionName.insertOne({key:value})'
+
+Type 'show collections' (returns 'zoo')
+
+To see what's inside the db, type db.zoo.find()
+
+Delete or drop individual documents use syntax db.collectionName.deleteOne({}) (EX: db.zoo.deleteOne({name: 'Cleo'}))
+
+Delete or drop all 'db.zoo.remove({})'
+
+Remove entire collection 'db.zoo.drop()'
+
+To remove the test dataset 'db.dropDatabase()'
+

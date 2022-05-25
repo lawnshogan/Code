@@ -26,3 +26,9 @@ $ git pull
 
 # REDO a commit
 git reset HEAD~
+
+
+Connect to VE
+$ cd C:/Users/shawn/anaconda3/envs
+
+$ source MasterVE/scripts/activate
