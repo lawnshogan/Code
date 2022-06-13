@@ -23,6 +23,14 @@ $ git push
 # If you want to pull edits down to your desktop
 $ git pull
 
+# Create a new branch
+git checkout -b Simple_Leaflet_Map
+ - git checkout lets us navigate between branches
+ - -b indicates we are creating a new branch
+ - The name of the new branch follows -b
+
+# confirm Branch
+git branch
 
 # REDO a commit
 git reset HEAD~
