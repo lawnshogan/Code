@@ -32,6 +32,24 @@ git checkout -b Simple_Leaflet_Map
 # confirm Branch
 git branch
 
+
+What is the order you would use to add files or folders to a GitHub branch? 
+git checkout <branch_name>
+git status
+git add.
+git status
+git commit -m
+git push
+To push the folders and files to the Simple_Leaflet_Map branch for the first time, type git push --set-upstream origin Simple_Leaflet_Map in the command line and press Enter.
+
+How to merge a dev branch with main:
+git branch
+git checkout dev
+git checkout master
+git merge dev
+
+
+
 # REDO a commit
 git reset HEAD~
 
