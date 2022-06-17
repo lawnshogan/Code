@@ -23,32 +23,15 @@ $ git push
 # If you want to pull edits down to your desktop
 $ git pull
 
-# Create a new branch
-git checkout -b Simple_Leaflet_Map
- - git checkout lets us navigate between branches
- - -b indicates we are creating a new branch
- - The name of the new branch follows -b
+# Follow these steps to create a branch off of the main branch:
+Navigate to your repository on your computer.
+Make sure you're on the main branch by typing: git branch
+If you're not on the main branch, type: git checkout main
+Pull the changes from the main branch by typing: git pull
+Create a new branch by typing: git checkout -b [name_of_your_new_branch]
 
 # confirm Branch
 git branch
-
-
-What is the order you would use to add files or folders to a GitHub branch? 
-git checkout <branch_name>
-git status
-git add.
-git status
-git commit -m
-git push
-To push the folders and files to the Simple_Leaflet_Map branch for the first time, type git push --set-upstream origin Simple_Leaflet_Map in the command line and press Enter.
-
-How to merge a dev branch with main:
-git branch
-git checkout dev
-git checkout master
-git merge dev
-
-
 
 # REDO a commit
 git reset HEAD~
