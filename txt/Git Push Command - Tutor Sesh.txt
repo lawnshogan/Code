@@ -30,6 +30,14 @@ If you're not on the main branch, type: git checkout main
 Pull the changes from the main branch by typing: git pull
 Create a new branch by typing: git checkout -b [name_of_your_new_branch]
 
+# Follow these steps to push changes to a new branch:
+Type: git status
+Add the folders and files by typing: git add .
+Confirm the correct files will be added by typing: git status
+Commit the changes by typing: git commit -m
+Push the changes to the branch by typing: git push --set-upstream origin Mapping_Single_Points
+
+
 # confirm Branch
 git branch
 
