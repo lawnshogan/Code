@@ -30,9 +30,7 @@ url = 'https://arcgis.com'
 username = 'martinwi'
 password = getpass()
 
-itemURLs = ['https://services1.arcgis.com/qkYTKlfKEB2WYL01/arcgis/rest/services/FMPro_Final_Loaded/FeatureServer/1'
-            ,'https://services1.arcgis.com/qkYTKlfKEB2WYL01/arcgis/rest/services/FMPro_Final_Loaded/FeatureServer/3'
-            ,'https://services1.arcgis.com/qkYTKlfKEB2WYL01/ArcGIS/rest/services/TreatyWaters_WFL1/FeatureServer/1']
+itemURLs = ['https://services5.arcgis.com/rqsYvPKZmvSrSWbw/ArcGIS/rest/services/SLB_Surface_Ownership/FeatureServer/0']
 
 groupID = '94bd8c89cc624bcd8ceac6c515f72973'
 
