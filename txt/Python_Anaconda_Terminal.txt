@@ -21,6 +21,8 @@
 
 
 ANACONDA
+# Location - C:\Users\shawn\anaconda3\envs
+
 # Install Matplotlib
 conda install matplotlib
 
