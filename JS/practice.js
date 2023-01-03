@@ -1,12 +1,17 @@
 
-var name = prompt("What is your name?");
+function getName() {
+    var name = prompt("What is your name?").toLowerCase();
 
-var firstChar = name.slice(0,1);
+    var firstChar = name.slice(0,1);
 
-var upperCaseFirstChar = firstChar.toUpperCase();
+    var upperCaseFirstChar = firstChar.toUpperCase();
 
-var restOfName = name.slice(1,name.length);
+    var restOfName = name.slice(1,name.length);
 
-var capitalisedName = upperCaseFirstChar + restOfName;
+    var capitalisedName = upperCaseFirstChar + restOfName;
 
-alert("Hello, " + capitalisedName);
+    alert("Hello, " + capitalisedName);
+}
+
+// Call the above function
+getName();
