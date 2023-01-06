@@ -15,9 +15,9 @@ YYYYMMDD = arcpy.GetParameterAsText(3)
 
 
 
-##################### Function Definitions ##########################################################################
+############################################### Function Definitions ##############################################################
 
-# Function for building a where clause from a list object
+########################################## Function for building a where clause from a list object ################################
 
 # This function takes three parameters: 'table', 'field', and 'valueList'. 
 # The function is used to build a WHERE clause for an ArcGIS Pro selection query.
@@ -46,23 +46,31 @@ def buildWhereClauseFromList(table, field, valueList):
     return whereClause
 
 
+##################################################################################################################################################
 
 
+############################## Function for generating polygons based on string type legal descriptions ##########################################
 
-# /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+# This function takes five parameters: legalList, tempFeat_1, tempFeat_2, newFeatures, and Sctn, ID, LN, TownRange, legal. 
+# The function is used to generate polygons from a list of legal descriptions.
 
+# The legalList parameter is a list of legal descriptions. The tempFeat_1 and tempFeat_2 parameters are the names of temporary feature classes 
+# that will be used as intermediate steps in the process of generating the polygons. The newFeatures parameter is the name of the final output 
+# feature class that will contain the generated polygons. The Sctn, ID, LN, TownRange, and legal parameters are values that will be added to the 
+# output feature class as attributes.
 
+# The function first uses the arcpy.Select_analysis() function to select all the features in the lots feature class where the FRSTDIVID field is equal to the FDI value. 
+# It then uses the buildWhereClauseFromList() function (which was defined earlier in the script) to build a WHERE clause based on the legalList parameter. 
+# The function then uses the arcpy.Select_analysis() function again to select only those features in the tempFeat_1 feature class that meet the criteria specified in the WHERE clause.
 
+# Next, the function uses the arcpy.Delete_management() function to delete the tempFeat_1 feature class, and then uses the arcpy.Dissolve_management() function to dissolve the tempFeat_2 feature class. 
+# It then uses the arcpy.AddField_management() function to add two new fields to the tempFeat_1 feature class: INDEX_NUM and LEGAL_DESCRIPTION.
 
-# Function for generating polygons based on string type legal descriptions
+# The function then uses an update cursor to loop through each row in the tempFeat_1 feature class and updates the values in the INDEX_NUM and LEGAL_DESCRIPTION fields. 
+# It sets the value of the INDEX_NUM field to the ID parameter and the value of the LEGAL_DESCRIPTION field to the legal parameter.
 
-
-
-
-
-
-
-
+# Finally, the function uses the arcpy.Append_management() function to append the tempFeat_1 feature class to the newFeatures feature class, and then uses the arcpy.Delete_management() function to delete the temporary feature classes. 
+# It also displays a success message and the values of the LN, TownRange, Sctn, and legal parameters.
 
 
 def makeFeaturesFromLegalDescriptions(legalList, tempFeat_1, tempFeat_2, newFeatures, Sctn, ID, LN, TownRange, legal):
@@ -95,13 +103,16 @@ def makeFeaturesFromLegalDescriptions(legalList, tempFeat_1, tempFeat_2, newFeat
         arcpy.AddWarning("Township/Range: " + str(TownRange))
         arcpy.AddWarning("Section: " + str(Sctn))
         arcpy.AddWarning("Legal Description: " + str(legal))
+        arcpy.AddMessage(" ")
+        arcpy.AddWarning("Auto-digitization of legal descriptions starting now!")
 
-###################################################################################################################
 
-arcpy.AddMessage(" ")
-arcpy.AddWarning("Auto-digitization of legal descriptions starting now!")
 
-# initialize objects/file paths/tables
+
+
+
+
+######################################## Initialize objects/file paths/tables ####################################################
 idField = "LEG_DESC"
 lotTest = "null"
 outputFile = str(outputFile) + "_" + str(YYYYMMDD)
@@ -116,11 +127,11 @@ TF2 = r'F:\DRAFTING\ArcGIS Drafting Projects\WTD\NM\_Master Data\WorkingData_Joh
 idNum = 0
 fields = arcpy.ListFields(inTable, "", "String")
 
-# setting the ability for the script to overwrite previous outputs of the same name
+######################################## Setting the ability for the script to overwrite previous outputs of the same name #######################################
 arcpy.overwriteOutputs = True        
 arcpy.env.overwriteOutput = True
 
-# script for execution of tool
+####################################################### Script for execution of tool ####################################################
 for field in fields:
     if field.name == str(idField):
         arcpy.AddField_management(inTable, "INDEX_NUM", "LONG")
@@ -152,9 +163,9 @@ for field in fields:
                 row[4] = idNum
                 row[3] = FDI
                 cursor.updateRow(row)
-                for legD in listLD:                                                             ###############################################
-                    piece = legD.replace("Lot", "")                                             ####        
-                    piece = piece.replace("s", "")                                              ###############################################                
+                for legD in listLD:
+                    piece = legD.replace("Lot", "") 
+                    piece = piece.replace("s", "")              
                     legalDescriptions.append(str(piece))
                 for LD in legalDescriptions:
                     if len(str(LD)) <= 2:
@@ -164,7 +175,7 @@ for field in fields:
                         arcpy.AddMessage(" ")
                         cont = "true"
 
-                        ################################### Transcriptions of Legal Descriptions ########################################################
+################################################ Transcriptions of Legal Descriptions ########################################################
 
                         #Halves - 4
                         if LD == "E1/2":
@@ -282,9 +293,6 @@ for field in fields:
                         #All - 1
                         elif LD == "All":
                             LegalList = ["NWNE","NENE","SWNE","SENE","NWSE","NESE","SWSE","SESE","NWNW","NENW","SWNW","SENW","NWSW","NESW","SWSW","SESW","1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31","32","33","34","35","36"]#
-
-                        ##################################################################################################################################
-
                         else:
                             arcpy.AddWarning("The current legal description was not recognized!  Feature was not created.")
                             arcpy.AddWarning("Lease #: " + str(leaseNumber))
