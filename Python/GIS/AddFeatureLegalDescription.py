@@ -157,9 +157,25 @@ arcpy.env.overwriteOutput = True
 
 
 
+# 1.  This code is looping through each field in the 'fields' list. 
+#     If the name of the current field is equal to the value of the 'idField' variable (which is "LEG_DESC"), the code uses the 'arcpy.AddField_management()' function 
+#     to add a new field called "INDEX_NUM" to the inTable table.
 
+# 2.  The code then defines a list of field names called 'cursorFields' and uses it to create an update cursor for the 'inTable' table. 
+#     It then loops through each row in the cursor and performs the following tasks:
 
+#     1.  Sets the value of the leaseNumber variable to the value of the sixth field in the row (the "LEASE" field).
+#     2.  Creates an empty list called legalDescriptions and an empty list called lotDesc.
+#     3.  Sets the value of the strLegal variable to the value of the first field in the row (the "LEG_DESC" field) as a string.
+#     4.  Removes all spaces from the value of the "LEG_DESC" field and sets the result to the noSpace variable.
+#     5.  Splits the noSpace variable into a list of individual legal descriptions and sets the result to the listLD variable.
+#     6.  Sets the value of the SEC variable to the value of the second field in the row (the "SECTION" field) as an integer.
+#     7.  Sets the value of the section variable to the value of the SEC variable as a string. If the length of the SEC variable is 1, it adds a "0" to the beginning of the string. If the length is 2, it sets the section variable to the SEC variable as is.
 
+#     8.  Sets the value of the TR variable to the value of the third field in the row (the "TWP_RNG" field).
+#     9.  Removes all hyphens, spaces, and commas from the value of the "TWP_RNG" field and sets the result to the twpID variable.
+#     10. Replaces the "T" and "R" characters in the twpID variable with nothing, and replaces the "S" character with "0S0".
+#     11. Creates a string called `secPart
 
 
 
