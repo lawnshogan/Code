@@ -1,3 +1,16 @@
+######################### HOW TO RUN THIS SCRIPT ########################
+##### 1. You will need to have a feature class or shapefile containing the polygons that you want to use as the base for generating the new polygons. 
+##### 2. This feature class or shapefile should be referenced in the 'lots' variable at the beginning of the script.
+
+##### 3. You will also need to have a feature class or shapefile that you want to use as the output for the generated polygons. 
+##### 4. This feature class or shapefile should be referenced in the 'newFeatures' variable at the beginning of the script.
+
+##### 5. You will also need to have a list of legal descriptions that you want to use to generate the new polygons. 
+##### 6. This list should be referenced in the 'legalList' variable at the beginning of the script.
+
+##### 7. Finally, you will need to have values for the 'Sctn', 'ID', 'LN', 'TownRange', and 'legal' parameters. These values should be passed to the function when you call it.
+
+
 import arcpy, math, os, sys
 from arcpy import env
 
