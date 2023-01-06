@@ -12,10 +12,9 @@ outputFileLoc = arcpy.GetParameterAsText(1)
 outputFile = arcpy.GetParameterAsText(2)
 YYYYMMDD = arcpy.GetParameterAsText(3)
 
-
-
-
 ############################################### Function Definitions ##############################################################
+
+###################################################################################################################################
 
 ########################################## Function for building a where clause from a list object ################################
 
@@ -46,31 +45,29 @@ def buildWhereClauseFromList(table, field, valueList):
     return whereClause
 
 
-##################################################################################################################################################
-
 
 ############################## Function for generating polygons based on string type legal descriptions ##########################################
 
 # This function takes five parameters: legalList, tempFeat_1, tempFeat_2, newFeatures, and Sctn, ID, LN, TownRange, legal. 
 # The function is used to generate polygons from a list of legal descriptions.
 
-# The legalList parameter is a list of legal descriptions. The tempFeat_1 and tempFeat_2 parameters are the names of temporary feature classes 
-# that will be used as intermediate steps in the process of generating the polygons. The newFeatures parameter is the name of the final output 
-# feature class that will contain the generated polygons. The Sctn, ID, LN, TownRange, and legal parameters are values that will be added to the 
+# The 'legalList' parameter is a list of legal descriptions. The 'tempFeat_1' and 'tempFeat_2' parameters are the names of temporary feature classes 
+# that will be used as intermediate steps in the process of generating the polygons. The 'newFeatures' parameter is the name of the final output 
+# feature class that will contain the generated polygons. The 'Sctn', 'ID', 'LN', 'TownRange', and 'legal' parameters are values that will be added to the 
 # output feature class as attributes.
 
-# The function first uses the arcpy.Select_analysis() function to select all the features in the lots feature class where the FRSTDIVID field is equal to the FDI value. 
-# It then uses the buildWhereClauseFromList() function (which was defined earlier in the script) to build a WHERE clause based on the legalList parameter. 
-# The function then uses the arcpy.Select_analysis() function again to select only those features in the tempFeat_1 feature class that meet the criteria specified in the WHERE clause.
+# The function first uses the 'arcpy.Select_analysis()' function to select all the features in the lots feature class where the FRSTDIVID field is equal to the FDI value. 
+# It then uses the 'buildWhereClauseFromList()' function (which was defined earlier in the script) to build a WHERE clause based on the 'legalList' parameter. 
+# The function then uses the 'arcpy.Select_analysis()' function again to select only those features in the 'tempFeat_1' feature class that meet the criteria specified in the WHERE clause.
 
-# Next, the function uses the arcpy.Delete_management() function to delete the tempFeat_1 feature class, and then uses the arcpy.Dissolve_management() function to dissolve the tempFeat_2 feature class. 
-# It then uses the arcpy.AddField_management() function to add two new fields to the tempFeat_1 feature class: INDEX_NUM and LEGAL_DESCRIPTION.
+# Next, the function uses the 'arcpy.Delete_management()' function to delete the 'tempFeat_1' feature class, and then uses the 'arcpy.Dissolve_management()' function to dissolve the 'tempFeat_2' feature class. 
+# It then uses the 'arcpy.AddField_management()' function to add two new fields to the 'tempFeat_1' feature class: 'INDEX_NUM and LEGAL_DESCRIPTION'.
 
-# The function then uses an update cursor to loop through each row in the tempFeat_1 feature class and updates the values in the INDEX_NUM and LEGAL_DESCRIPTION fields. 
-# It sets the value of the INDEX_NUM field to the ID parameter and the value of the LEGAL_DESCRIPTION field to the legal parameter.
+# The function then uses an update cursor to loop through each row in the 'tempFeat_1' feature class and updates the values in the INDEX_NUM and LEGAL_DESCRIPTION fields. 
+# It sets the value of the INDEX_NUM field to the 'ID' parameter and the value of the LEGAL_DESCRIPTION field to the 'legal' parameter.
 
-# Finally, the function uses the arcpy.Append_management() function to append the tempFeat_1 feature class to the newFeatures feature class, and then uses the arcpy.Delete_management() function to delete the temporary feature classes. 
-# It also displays a success message and the values of the LN, TownRange, Sctn, and legal parameters.
+# Finally, the function uses the 'arcpy.Append_management()' function to append the 'tempFeat_1' feature class to the 'newFeatures' feature class, and then uses the 'arcpy.Delete_management()' function to delete the temporary feature classes. 
+# It also displays a success message and the values of the 'LN', 'TownRange', 'Sctn', and 'legal' parameters.
 
 
 def makeFeaturesFromLegalDescriptions(legalList, tempFeat_1, tempFeat_2, newFeatures, Sctn, ID, LN, TownRange, legal):
@@ -105,12 +102,6 @@ def makeFeaturesFromLegalDescriptions(legalList, tempFeat_1, tempFeat_2, newFeat
         arcpy.AddWarning("Legal Description: " + str(legal))
         arcpy.AddMessage(" ")
         arcpy.AddWarning("Auto-digitization of legal descriptions starting now!")
-
-
-
-
-
-
 
 ######################################## Initialize objects/file paths/tables ####################################################
 idField = "LEG_DESC"
@@ -151,7 +142,7 @@ for field in fields:
                 if len(str(SEC)) == 2:
                     section = str(SEC)
                 TR = row[2]
-                twpID = row[2].replace("-", "")     #Parsing the twp/rng, section identifier
+                twpID = row[2].replace("-", "")     #### Parsing the twp/rng, section identifier ####
                 twpID = twpID.replace(" ", "")
                 twpID = twpID.replace("T", "")
                 twpID = twpID.replace("R", "")
