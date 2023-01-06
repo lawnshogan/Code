@@ -135,10 +135,6 @@ def makeFeaturesFromLegalDescriptions(legalList, tempFeat_1, tempFeat_2, newFeat
 
 ##### 6. Finally, the code sets the value of the idNum variable to 0 and uses the arcpy.ListFields() function to get a list of all the string fields in the inTable table.
 
-
-
-
-
 idField = "LEG_DESC"
 lotTest = "null"
 outputFile = str(outputFile) + "_" + str(YYYYMMDD)
@@ -158,6 +154,16 @@ arcpy.overwriteOutputs = True
 arcpy.env.overwriteOutput = True
 
 ####################################################### Script for execution of tool ####################################################
+
+
+
+
+
+
+
+
+
+
 for field in fields:
     if field.name == str(idField):
         arcpy.AddField_management(inTable, "INDEX_NUM", "LONG")
