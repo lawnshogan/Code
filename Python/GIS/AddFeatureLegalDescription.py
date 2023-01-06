@@ -2,14 +2,41 @@ import arcpy, math, os, sys
 from arcpy import env
 
 # Getting parameters from tool properties
+# excelFile: The file path of an Excel file
+# outputFileLoc: The file path of the directory where an output file will be saved
+# outputFile: The name of the output file that will be saved in the outputFileLoc directory
+# YYYYMMDD: A string representing a date in the format "YYYYMMDD" (e.g. "20230104" for January 4th, 2023)
+
 excelFile = arcpy.GetParameterAsText(0)
 outputFileLoc = arcpy.GetParameterAsText(1)
 outputFile = arcpy.GetParameterAsText(2)
 YYYYMMDD = arcpy.GetParameterAsText(3)
 
+
+
+
 ##################### Function Definitions ##########################################################################
 
 # Function for building a where clause from a list object
+
+# This function takes three parameters: 'table', 'field', and 'valueList'. 
+# The function is used to build a WHERE clause for an ArcGIS Pro selection query.
+
+# The 'table' parameter is the name of a table or feature class. The 'field' parameter is the name of a field in the table. 
+# The 'valueList' parameter is a list of values that you want to use to filter the data in the table.
+
+# The function first uses the 'arcpy.AddFieldDelimiters()' function to add the appropriate field delimiters to the 'field' parameter. 
+# This is necessary because the field name may contain spaces or special characters
+# Adding the delimiters ensures that the field name is correctly interpreted by ArcGIS Pro.
+
+# Next, the function uses the 'arcpy.ListFields()' function to get the data type of the field specified by the 'field' parameter. 
+# If the field is a string field, the function will enclose each value in single quotes in the 'valueList' parameter. 
+# This is necessary because string values in an ArcGIS Pro selection query must be enclosed in single quotes.
+
+# Finally, the function builds and returns the WHERE clause by concatenating the delimited field name, the string " IN(", the comma-separated list of values, and the string ")". 
+# The resulting WHERE clause will look something like this: "field_name IN('value1', 'value2', 'value3')". 
+# This WHERE clause can be used to filter the data in the table by selecting only those records where the value in the field field is one of the values in the valueList parameter.
+
 def buildWhereClauseFromList(table, field, valueList):
     fieldDelimited = arcpy.AddFieldDelimiters(arcpy.Describe(table).path, field)
     fieldType = arcpy.ListFields(table, field)[0].type
@@ -18,7 +45,26 @@ def buildWhereClauseFromList(table, field, valueList):
     whereClause = "%s IN(%s)" % (fieldDelimited, ', '.join(map(str, valueList)))
     return whereClause
 
+
+
+
+
+# /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
 # Function for generating polygons based on string type legal descriptions
+
+
+
+
+
+
+
+
+
+
 def makeFeaturesFromLegalDescriptions(legalList, tempFeat_1, tempFeat_2, newFeatures, Sctn, ID, LN, TownRange, legal):
     try:
         arcpy.Select_analysis(lots, tempFeat_1, '"FRSTDIVID" = ' + "'%s'" %FDI)
