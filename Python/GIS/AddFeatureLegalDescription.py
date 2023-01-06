@@ -117,6 +117,28 @@ def makeFeaturesFromLegalDescriptions(legalList, tempFeat_1, tempFeat_2, newFeat
         arcpy.AddWarning("Auto-digitization of legal descriptions starting now!")
 
 ######################################## Initialize objects/file paths/tables ####################################################
+
+
+##### 1. This code sets the value of the 'idField' variable to the string "LEG_DESC", the value of the 'lotTest' variable to the string "null", and the value of the 
+#####     'outputFile' variable to the value of the 'outputFile' variable, followed by an underscore, followed by the value of the 'YYYYMMDD' variable.
+
+##### 2. It then uses the 'arcpy.TableToTable_conversion()' function to convert the Excel file specified by the 'excelFile' variable 
+#####     to a table in a new file located in the 'outputFileLoc' directory, and names the new table "TempTable_One".
+
+##### 3. The code sets the value of the 'inTable' variable to the path of the newly created table, and then sets the value of the 'template' variable to the path of a template feature class in a geodatabase.
+
+##### 4. It then uses the 'arcpy.CreateFeatureclass_management()' function to create a new feature class in the 'outputFileLoc' directory, using the 'template' feature class as a guide for the field names and data types. 
+#####     The feature class is named using the value of the 'outputFile' variable.
+
+##### 5. The code sets the value of the 'newFeat' variable to the path of the newly created feature class, and then sets the value of the 'lots' variable to the path 
+#####     of a feature class in a geodatabase. It also sets the values of the 'TF1' and 'TF2' variables to the paths of two temporary feature classes in a different geodatabase.
+
+##### 6. Finally, the code sets the value of the idNum variable to 0 and uses the arcpy.ListFields() function to get a list of all the string fields in the inTable table.
+
+
+
+
+
 idField = "LEG_DESC"
 lotTest = "null"
 outputFile = str(outputFile) + "_" + str(YYYYMMDD)
