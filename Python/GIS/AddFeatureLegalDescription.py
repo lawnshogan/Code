@@ -5,37 +5,36 @@
 #         excelFile: The path and name of the input Excel file.
 #         lots: The path and name of the feature class or shapefile containing the base polygons.
 #         newFeatures: The path and name of the output feature class or shapefile.
-#         outputFileLoc: The directory where you want to store the output table and feature class.
-#         YYYYMMDD: A string or integer value that will be used to create the output file name.
+#         outputFileLoc: The file path of the directory where an output table and feature class will be saved.
+#         YYYYMMDD: A string or integer value that will be used to create the output file name. (e.g. "20230104" for January 4th, 2023)
+#         outputFile: The name of the output file that will be saved in the outputFileLoc directory
 
-# 2.  Set the value of the idField variable to the name of the field in the input Excel file that contains the legal descriptions.
+# 2.  Set the value of the 'idField' variable to the name of the field in the input Excel file that contains the legal descriptions.
 
-# 3.  Set the value of the lotTest variable to "null" (unless you want to use a different value).
+# 3.  Set the value of the 'lotTest' variable to "null" (unless you want to use a different value).
 
-# 4.  Set the value of the outputFile variable to the desired name for the output feature class.
+# 4.  Set the value of the 'outputFile' variable to the desired name for the output feature class.
 
-# 5.  Use the arcpy.TableToTable_conversion() function to convert the input Excel file to a table in a new file located 
-#     in the outputFileLoc directory, and name the new table "TempTable_One".
+# 5.  Use the 'arcpy.TableToTable_conversion()' function to convert the input Excel file to a table in a new file located 
+#     in the 'outputFileLoc' directory, and name the new table "TempTable_One".
 
-# 6.  Use the arcpy.CreateFeatureclass_management() function to create a new feature class in the outputFileLoc directory, 
-#     using the template feature class as a guide for the field names and data types. Name the feature class using the value of the outputFile variable.
+# 6.  Use the 'arcpy.CreateFeatureclass_management()' function to create a new feature class in the 'outputFileLoc' directory, 
+#     using the 'template' feature class as a guide for the field names and data types. Name the feature class using the value of the 'outputFile' variable.
 
-# 7.  Use a for loop to loop through each field in the fields list. If the name of the current field is equal to the value of the idField variable, 
-#     use the arcpy.AddField_management() function to add a new field called "INDEX_NUM" to the inTable table.
+# 7.  Use a for loop to loop through each field in the 'fields' list. If the name of the current field is equal to the value of the 'idField' variable, 
+#     use the 'arcpy.AddField_management()' function to add a new field called "INDEX_NUM" to the inTable table.
 
-# 8.  Define a list of field names called cursorFields and use it to create an update cursor for the inTable table. 
+# 8.  Define a list of field names called 'cursorFields' and use it to create an update cursor for the 'inTable' table. 
 #     Loop through each row in the cursor and perform the tasks listed in the script.
 
 # 9.  When the script is finished running, the output feature class will contain the generated polygons based on the legal descriptions in the input Excel file.
 
+
+
+###################################### Getting parameters from tool properties ######################################
+
 import arcpy, math, os, sys
 from arcpy import env
-
-# Getting parameters from tool properties
-# excelFile: The file path of an Excel file
-# outputFileLoc: The file path of the directory where an output file will be saved
-# outputFile: The name of the output file that will be saved in the outputFileLoc directory
-# YYYYMMDD: A string representing a date in the format "YYYYMMDD" (e.g. "20230104" for January 4th, 2023)
 
 excelFile = arcpy.GetParameterAsText(0)
 outputFileLoc = arcpy.GetParameterAsText(1)
