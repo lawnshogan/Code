@@ -85,3 +85,20 @@ function getMilk(bottles) {
   
   console.log(classifyBMI(1.75, 75)); // Output: Normal
   
+
+
+
+
+  ///////////////////////////////////////////////////////////////////////
+  ////////////////// While Statement - 99 Bottles Problem ////////////////////////////////////
+  var numberOfBottles = 99
+while (numberOfBottles >= 0) {
+    var bottleWord = "bottle";
+    if (numberOfBottles === 1) {
+        bottleWord = "bottles";
+    } 
+    console.log(numberOfBottles + " " + bottleWord + " of beer on the wall");
+    console.log(numberOfBottles + " " + bottleWord + " of beer,");
+    console.log("Take one down, pass it around,");
+	numberOfBottles--;
+    console.log(numberOfBottles + " " + bottleWord + " of beer on the wall.");
