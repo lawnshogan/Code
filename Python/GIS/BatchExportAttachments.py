@@ -4,7 +4,7 @@ import os
 
 inTable = arcpy.GetParameterAsText(0)
 fileLocation = arcpy.GetParameterAsText(1)
-
+test
 with da.SearchCursor(inTable, ['DATA', 'ATT_NAME', 'ATTACHMENTID']) as cursor:
     for item in cursor:
         attachment = item[0]
