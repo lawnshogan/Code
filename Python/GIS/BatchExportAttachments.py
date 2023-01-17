@@ -14,4 +14,4 @@ with da.SearchCursor(inTable, ['DATA', 'ATT_NAME', 'ATTACHMENTID']) as cursor:
         del item
         del filenum
         del filename
-        del attachment
+        del attachmenttest
