@@ -9,4 +9,4 @@ def generate_qr_code(ssid, password):
     print(f'QR code saved as {ssid}.png')
 
 # Example usage
-generate_qr_code('Trojan Virus Downloader', '9250W73rdPlace')
+generate_qr_code('Wifi_Name', 'Password')
