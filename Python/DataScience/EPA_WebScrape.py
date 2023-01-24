@@ -11,7 +11,7 @@ driver.get("https://ghgdata.epa.gov/ghgp/main.do#/facility/?q=Find%20a%20Facilit
 
 # Step 4: Use Selenium to interact with the website elements
 select_year = Select(driver.find_element_by_id("reportingYear"))
-test
+
 # Step 5: Use a loop to select and download data for each year
 for year in select_year.options:
     select_year.select_by_value(year.get_attribute("value"))
