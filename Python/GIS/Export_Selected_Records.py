@@ -5,7 +5,7 @@ arcpy.env.workspace = r"G:\Shared drives\SLB Business Intelligence\Data Services
 
 # Set the input feature class
 in_fc = "USA_Federal_Lands"
-
+test
 # Create a list of unique values in the "Agency" field
 unique_values = list(set([row[0] for row in arcpy.da.SearchCursor(in_fc, ["Agency"])]))
 
