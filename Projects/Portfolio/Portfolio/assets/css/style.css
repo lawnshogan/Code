@@ -1124,13 +1124,18 @@ section {
     color: green;
     text-shadow: 0 0 10px green;
   }
-  50% {
-    color: yellow;
-    text-shadow: 0 0 10px yellow;
+  45% {
+    color: green;
+    text-shadow: 0 0 10px;
+  }
+  55% {
+    color: green;
+    text-shadow: 0 0 10px;
   }
   100% {
     color: green;
     text-shadow: 0 0 10px green;
   }
 }
+
 
