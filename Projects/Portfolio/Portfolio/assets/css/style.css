@@ -1140,3 +1140,19 @@ section {
 
 
 /* Light / Dark Mode */
+
+
+
+/* Back Button */
+.back-btn {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.back-btn:hover {
+  background-color: #555;
+}
