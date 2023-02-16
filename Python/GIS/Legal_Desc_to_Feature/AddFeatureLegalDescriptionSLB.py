@@ -3,7 +3,7 @@
 
 import arcpy, math, os, sys
 from arcpy import env
-test
+
 excelFile = arcpy.GetParameterAsText(0)
 outputFileLoc = arcpy.GetParameterAsText(1)
 outputFile = arcpy.GetParameterAsText(2)
