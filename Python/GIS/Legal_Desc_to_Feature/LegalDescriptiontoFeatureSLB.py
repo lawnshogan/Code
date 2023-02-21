@@ -52,7 +52,7 @@ def makeFeaturesFromLegalDescriptions(legalList, tempFeat_1, tempFeat_2, newFeat
         arcpy.AddMessage(" ")
         arcpy.AddWarning("Auto-digitization of legal descriptions starting now!")
 
-
+test
 idField = "LEG_DESC"
 lotTest = "null"
 outputFile = str(outputFile) + "_" + str(YYYYMMDD)
