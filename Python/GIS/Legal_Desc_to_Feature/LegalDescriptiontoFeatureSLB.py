@@ -8,7 +8,7 @@ excelFile = arcpy.GetParameterAsText(0)
 outputFileLoc = arcpy.GetParameterAsText(1)
 outputFile = arcpy.GetParameterAsText(2)
 YYYYMMDD = arcpy.GetParameterAsText(3)
-
+testS
 
 def buildWhereClauseFromList(table, field, valueList):
     fieldDelimited = arcpy.AddFieldDelimiters(arcpy.Describe(table).path, field)
