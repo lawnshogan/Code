@@ -17,7 +17,7 @@ def buildWhereClauseFromList(table, field, valueList):
         valueList = ["'%s'" % value for value in valueList]
     whereClause = "%s IN(%s)" % (fieldDelimited, ', '.join(map(str, valueList)))
     return whereClause
-tst
+
 
 def makeFeaturesFromLegalDescriptions(legalList, tempFeat_1, tempFeat_2, newFeatures, Sctn, ID, LN, TownRange, legal):
     try:
