@@ -42,11 +42,20 @@ h6 {
   right: 15px;
   bottom: 15px;
   z-index: 996;
-  background: #149ddd;
   width: 40px;
   height: 40px;
   border-radius: 50px;
   transition: all 0.4s;
+  background: linear-gradient(to bottom, #b4b4b4, #313131);
+}
+
+.back-to-top:hover {
+  background: linear-gradient(to bottom, #313131, #b4b4b4);
+}
+
+.back-to-top.active {
+  visibility: visible;
+  opacity: 1;
 }
 
 .back-to-top i {
@@ -55,15 +64,15 @@ h6 {
   line-height: 0;
 }
 
-.back-to-top:hover {
-  background: #2eafec;
-  color: #fff;
+.back-to-top i:hover {
+  cursor: pointer;
+  stroke-width: 4px;
 }
 
-.back-to-top.active {
-  visibility: visible;
-  opacity: 1;
+.back-to-top i:active {
+  stroke-width: 8px;
 }
+
 
 /*--------------------------------------------------------------
 # Header
@@ -215,7 +224,7 @@ h6 {
 }
 
 .mobile-nav-toggle:hover {
-  background: linear-gradient(to right, #ffffff, #c4c4c4);
+
   color: #000000;
 }
 
@@ -232,8 +241,11 @@ h6 {
 
 
 .nav-link:hover {
-  background-color: #f8f9fa;
-  color: #007bff;
+  border: 2px solid white;
+}
+
+.nav-link.active {
+  background-color: transparent !important;
 }
 
 
@@ -1172,3 +1184,10 @@ section {
 .back-btn:hover {
   background-color: #555;
 }
+
+
+/* Scroll Bar */
+::-webkit-scrollbar {
+  display: none;
+}
+

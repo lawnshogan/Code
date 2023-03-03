@@ -69,9 +69,13 @@
         </ul>
       </nav><!-- .nav-menu -->
       
-      <style>
-        nav-link:hover
-      </style>
+
+<style>
+  .nav-link:hover {
+    border: 2px solid white;
+  }
+</style>
+
       
     </div>
   </header><!-- End Header -->
@@ -119,13 +123,9 @@
                 <ul>
                   <li><i class="bi bi-chevron-right"></i> <strong>Age:</strong> <span id="age"></span></li>
 
-                  <script>
-                    var birthDate = new Date('1991-05-18');
-                    var ageInMilliseconds = Date.now() - birthDate.getTime();
-                    var ageDate = new Date(ageInMilliseconds);
-                    var age = Math.abs(ageDate.getUTCFullYear() - 1970);
-                    document.getElementById('age').textContent = age;
-                  </script>                  <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong> <span>Bachelor of Science - GIS</span></li>
+                  <script src="../Portfolio/assets/js/age.js"></script>
+                  
+                  <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong> <span>Bachelor of Science - GIS</span></li>
                   <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span>smlogan541@gmail.com</span></li>
                   <li><i class="bi bi-chevron-right"></i> <strong>Freelance:</strong> <span>Available</span></li>
                 </ul>
