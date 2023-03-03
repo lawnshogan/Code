@@ -203,6 +203,7 @@ h6 {
   font-size: 24px;
   transition: all 0.4s;
   outline: none !important;
+  background: linear-gradient(to right, #f1f1f1, #c7c7c7);
   width: 40px;
   height: 40px;
   display: inline-flex;
@@ -211,13 +212,13 @@ h6 {
   line-height: 0;
   border-radius: 50px;
   cursor: pointer;
-  background: linear-gradient(to right, #00fb4b, #048647);
 }
 
 .mobile-nav-toggle:hover {
-  background: linear-gradient(to right, #deea00, #c4ed2d);
-  color: #218d03;
+  background: linear-gradient(to right, #ffffff, #c4c4c4);
+  color: #000000;
 }
+
 
 
 .mobile-nav-active {
