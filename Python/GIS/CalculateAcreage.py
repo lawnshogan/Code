@@ -1,7 +1,7 @@
 # Import necessary modules
 import arcpy
 from arcpy import env
-test
+
 # Set the workspace environment
 env.workspace = "C:/data"
 
