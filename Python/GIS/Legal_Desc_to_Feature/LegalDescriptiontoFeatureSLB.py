@@ -114,7 +114,7 @@ for field in fields:
                         arcpy.AddMessage(" ")
                         cont = "true"
 
-test
+
                         #Halves - 4
                         if LD == "E1/2":
                             LegalList = ["NWNE","NENE","SWNE","SENE","NWSE","NESE","SWSE","SESE"]#
