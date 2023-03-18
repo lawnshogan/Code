@@ -5,7 +5,7 @@ from arcpy import env
 # Set the workspace environment
 env.workspace = "C:/data"
 
-# Set the input feature class
+# Set the input feature classtet
 input_fc = "parcels.shp"
 
 # Set the field to calculate acreage for
