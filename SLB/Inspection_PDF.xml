@@ -1,0 +1,165 @@
+<?xml version="1.0"?><!DOCTYPE pdf PUBLIC "-//big.faceless.org//report" "report-1.1.dtd">
+<pdf>
+<head>
+	<link name="NotoSans" type="font" subtype="truetype" src="${nsfont.NotoSans_Regular}" src-bold="${nsfont.NotoSans_Bold}" src-italic="${nsfont.NotoSans_Italic}" src-bolditalic="${nsfont.NotoSans_BoldItalic}" bytes="2" />
+	<#if .locale == "zh_CN">
+		<link name="NotoSansCJKsc" type="font" subtype="opentype" src="${nsfont.NotoSansCJKsc_Regular}" src-bold="${nsfont.NotoSansCJKsc_Bold}" bytes="2" />
+	<#elseif .locale == "zh_TW">
+		<link name="NotoSansCJKtc" type="font" subtype="opentype" src="${nsfont.NotoSansCJKtc_Regular}" src-bold="${nsfont.NotoSansCJKtc_Bold}" bytes="2" />
+	<#elseif .locale == "ja_JP">
+		<link name="NotoSansCJKjp" type="font" subtype="opentype" src="${nsfont.NotoSansCJKjp_Regular}" src-bold="${nsfont.NotoSansCJKjp_Bold}" bytes="2" />
+	<#elseif .locale == "ko_KR">
+		<link name="NotoSansCJKkr" type="font" subtype="opentype" src="${nsfont.NotoSansCJKkr_Regular}" src-bold="${nsfont.NotoSansCJKkr_Bold}" bytes="2" />
+	<#elseif .locale == "th_TH">
+		<link name="NotoSansThai" type="font" subtype="opentype" src="${nsfont.NotoSansThai_Regular}" src-bold="${nsfont.NotoSansThai_Bold}" bytes="2" />
+	</#if>
+    <style type="text/css">table { font-size: 9pt; table-layout: fixed; width: 100%; }
+th { font-weight: bold; font-size: 8pt; vertical-align: middle; padding: 5px 6px 3px; background-color: #e3e3e3; color: #333333; padding-bottom: 10px; padding-top: 10px; }
+td { padding: 4px 6px; }
+b { font-weight: bold; color: #333333; }
+</style>
+</head>
+    
+    
+<body>
+    <table style="width: 100%;">
+        <tr>
+            <td style="text-align: center; font-size: 18pt; font-weight: bold;">${companyInformation.companyName}</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td style="text-align: center; font-size: 18pt; font-weight: bold;">INSPECTION REPORT</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+        </tr>
+    </table>
+
+
+    <table border="1" cellpadding="0" cellspacing="0" style="width: 100%; font-size: 12pt;">
+        <tr>
+            <td width ="px" style="font-weight: bold; font-size: 14pt;">Lease Number</td>
+            <td style="font-size: 12pt; word-wrap: break-word;">${record.custrecord_hein_insp_related_lease}</td>
+            <td style="font-weight: bold; font-size: 14pt;">Lessee Name</td>
+            <td style="font-size: 12pt; word-wrap: break-word;">${record.custrecord_slb_insp_lessee}</td>
+        </tr>
+        <tr>
+            <td style="font-weight: bold; font-size: 14pt;">Lease SubType</td>
+            <td style="font-size: 12pt; word-wrap: break-word;">${record.custrecord_slb_insp_lease_subtype}</td>
+            <td style="font-weight: bold; font-size: 14pt;">County</td>
+            <td style="font-size: 12pt; word-wrap: break-word;">${record.custrecord_slb_insp_county}</td>
+        </tr>
+        <tr>
+            <td style="font-weight: bold; font-size: 14pt;">Inspector</td>
+            <td style="font-size: 12pt; word-wrap: break-word;">${record.custrecord_hein_insp_inspector}</td>
+            <td style="font-weight: bold; font-size: 14pt;">Inspection Date</td>
+            <td style="font-size: 12pt; word-wrap: break-word;">${record.custrecord_hein_insp_date}</td>
+        </tr>
+        <tr>
+            <td style="font-weight: bold; font-size: 14pt;">Inspection Type</td>
+            <td style="font-size: 12pt; word-wrap: break-word;">${record.custrecord_slb_insp_subtype}</td>
+            <td style="font-weight: bold; font-size: 14pt;">First Year with Lessee</td>
+            <td style="font-size: 12pt; word-wrap: break-word;">${record.custrecord_slb_insp_lessee_first_year}</td>
+        </tr>
+        <tr>
+            <td style="font-weight: bold; font-size: 14pt;">In the PAP?</td>
+            <td style="font-size: 12pt; word-wrap: break-word;">${record.custrecord_slb_insp_pap}</td>
+            <td style="font-weight: bold; font-size: 14pt;">In The Stewardship Trust?</td>
+            <td class="larger">${record.custrecord_slb_insp_st}</td>
+        </tr>
+    </table>
+  
+ <br>
+ <br>
+   
+<div style="text-align: center;">
+    <span style="font-weight: bold; font-size: 18pt;">PARCEL INFORMATION</span><br /><br />
+    <span style="font-weight: bold; font-size: 16pt; color: gray;">Grazing</span><br /><br />
+    <table border="1" cellpadding="0" cellspacing="0" style="width: 100%; font-size: 12pt;">
+    <tr>
+        <td style="font-weight: bold; font-size: 14pt;">Acres</td>
+        <td>${record.custrecord_slb_insp_grazing_acres}</td>
+        <td style="font-weight: bold; font-size: 14pt;">AUMs</td>
+        <td>${record.custrecord_hein_insp_aums}</td>
+    </tr>
+    <tr>
+        <td style="font-weight: bold; font-size: 14pt;">Acres/AUM</td>
+        <td>${record.custrecord_slb_insp_acres_per_aum}</td>
+        <td style="font-weight: bold; font-size: 14pt;">Range Conditions</td>
+        <td>${record.custrecord_hein_inspection_range_cond}</td>
+    </tr>
+    <tr>
+        <td style="font-weight: bold; font-size: 14pt;">Cover Type</td>
+        <td>${record.custrecord_slb_insp_cover_type}</td>
+        <td></td>
+        <td></td>
+    </tr>
+</table> 
+  
+ <br>
+ <br>
+  
+<div style="text-align:center;">
+  <div style="font-weight:bold;font-size:18pt;">DRY CROP</div>
+  <br>
+  <br>
+  <table border="1" cellpadding="0" cellspacing="0" style="width:500px;margin:auto;">
+    <tr>
+      <td style="font-weight:bold;font-size:14pt;">Acres:</td>
+      <td>${record.custrecord_slb_insp_dry_acres}</td>
+    </tr>
+    <tr>
+      <td style="font-weight:bold;font-size:14pt;">Range Conditions:</td>
+      <td>${record.custrecord_slb_insp_range_cond_dry}</td>
+    </tr>
+    <tr>
+      <td style="font-weight:bold;font-size:14pt;">Cover Type:</td>
+      <td>${record.custrecord_slb_insp_cover_dryland}</td>
+    </tr>
+  </table>
+</div>
+&nbsp;
+  
+<br>
+<br>
+  
+<div style="text-align:center;">
+  <span style="font-weight:bold; font-size:18pt;">IRRIGATED</span>
+</div>
+<br>
+<br>
+<table border="1" cellpadding="0" cellspacing="0" style="width:500px; margin: 0 auto;">
+  <tr>
+    <td>Acres:</td>
+    <td>${record.custrecord_slb_insp_irr_acres}</td>
+  </tr>
+  <tr>
+    <td>Water Source:</td>
+    <td>${record.custrecord_slb_insp_water_src_irr}</td>
+  </tr>
+  <tr>
+    <td>Water Rights:</td>
+    <td>${record.custrecord_slb_insp_water_rights_irr}</td>
+  </tr>
+</table>
+
+&nbsp;
+
+<br>
+<br>
+  
+<div style="text-align:center;font-weight:bold;font-size:18pt;">NON-BILLABLE</div><br><br>
+<table border="1" cellpadding="0" cellspacing="0" style="width:500px;margin:0 auto;">
+    <tr>
+        <td style="font-weight:bold;font-size:14pt;">Acres:</td>
+        <td style="font-size:14pt;">${record.custrecordslb_insp_nonbillable_acres}</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold;font-size:14pt;">Reason:</td>
+        <td style="font-size:14pt;">${record.custrecordslb_insp_nonbillable_reason}</td>
+    </tr>
+</table>
+</body>
+</pdf>
