@@ -14,9 +14,11 @@ for root, dirs, files in os.walk(source_folder):
         if file.endswith('.zip'):
             file_path = os.path.join(root, file)
             with zipfile.ZipFile(file_path, 'r') as zip_ref:
-                zip_ref.extractall(target_folder)
+                # create the same folder structure in the target folder
+                zip_ref.extractall(os.path.join(target_folder, os.path.relpath(root, source_folder)))
         else:
-            # copy all other files to target folder
+            # copy all other files to target folder with the same folder structure
             src_path = os.path.join(root, file)
-            dst_path = os.path.join(target_folder, file)
+            dst_path = os.path.join(target_folder, os.path.relpath(root, source_folder), file)
+            os.makedirs(os.path.dirname(dst_path), exist_ok=True)
             shutil.copy2(src_path, dst_path)
