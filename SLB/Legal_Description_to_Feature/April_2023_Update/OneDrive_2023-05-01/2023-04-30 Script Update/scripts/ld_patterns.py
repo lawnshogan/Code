@@ -47,7 +47,7 @@ PATTERNS = {
 "NW1/4NE1/4":  ["NWNE"],
 "NE1/4NE1/4":  ["NENE"],
 "SW1/4NE1/4":  ["SWNE"],
-"SE1/4NE1/4":  ["SENE"],
+"SE1/4NE1/4":  ["SENE"],t
 "NW1/4SW1/4":  ["NWSW"],
 "NE1/4SW1/4":  ["NESW"],
 "SW1/4SW1/4":  ["SWSW"],
