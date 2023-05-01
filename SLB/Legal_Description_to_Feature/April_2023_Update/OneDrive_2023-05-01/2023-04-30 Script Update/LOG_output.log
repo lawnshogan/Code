@@ -1,0 +1,120 @@
+Starting legal description feature layer creation
+Creating temp lease layer
+Setting up temp lease table
+Loading Excel lease data to lease table
+Starting insert to lease table
+66 total records inserted from Excel to lease table
+Adding PLSS lookup fields to temp table and temp layer
+Updating table with first division ID
+WARNING: 8 errors found in First Div update of lease table
+See the error column of the lease table for details
+Getting PLSS features from first pass lease data
+ERROR: No PLSS records found for query: FRSTDIVID = 'CO060060N0640W0SN160' AND SECDIVNO = '160' , 2nd Div: ['160']
+ERROR: No PLSS records found for query: FRSTDIVID = 'CO060070N0760W0SN160' AND SECDIVNO = '520' , 2nd Div: ['520']
+ERROR: No PLSS records found for query: FRSTDIVID = 'CO060110S0760W0SN090' AND SECDIVNO = '33' , 2nd Div: ['1', '2', '4', '5', '11', '12', '13', '22', '23', '33']
+ERROR: Unable to parse legal description: "(SEE METES AND BOUNDS)"
+	Skipping row:
+	 [5, '9N', '69W', '4', '(SEE METES AND BOUNDS)', 938823, 'Recreation', None, 'REC-114230', 'THE NORTH POUDRE IRRIGATION COMPANY', None, None, datetime.datetime(2025, 2, 9, 0, 0), 'FAM003049', '6-9N-69W-4-Surface-Larimer-School', 10.0, 3, 'Rachel Turner', 'North Central', '6', 'Active', 'CO060090N0690W0SN040', None, None]
+ERROR: Unable to parse legal description: "(THOSE PARTS LYING W OF D&RG RR) NENE, W2E2, NESW"
+	Skipping row:
+	 [6, '22S', '65W', '23', '(THOSE PARTS LYING W OF D&RG RR) NENE, W2E2, NESW', 20491, 'Agriculture', 'Grazing', 'AG-108906', 'BARR FAMILY, LLC', None, datetime.datetime(2015, 1, 20, 0, 0), datetime.datetime(2025, 1, 20, 0, 0), 'FAM005815', '6-22S-65W-23-Surface-Pueblo-School', 112.0, 10, 'Justin Osborne', 'South Central', '6', 'Active', 'CO060220S0650W0SN230', None, None]
+ERROR: No PLSS records found for query: FRSTDIVID = 'CO060200S0480W0SN320' AND SECDIVNO = '1' , 2nd Div: ['1']
+ERROR: Unable to parse legal description: "ALL - EXCEPT any portion thereof lying within existing County Roads."
+	Skipping row:
+	 [9, '1S', '57W', '31', 'ALL - EXCEPT any portion thereof lying within existing County Roads.', 912317, 'Agriculture', 'Grazing', 'AG-114091', 'ANTON E HERMES, KATHI A HERMES', None, datetime.datetime(2021, 9, 10, 0, 0), datetime.datetime(2031, 9, 10, 0, 0), 'FAM040495', '6-1S-57W-31-Surface-Adams-School', 621.56, 10, 'Rachel Turner', 'North Central', '6', 'Active', 'CO060010S0570W0SN310', None, None]
+ERROR: Unable to parse legal description: "ALL - LESS AND EXCEPT the NW ¼ of the NW ¼"
+	Skipping row:
+	 [10, '3N', '58W', '35', 'ALL - LESS AND EXCEPT the NW ¼ of the NW ¼', 877335, 'Agriculture', 'Grazing', 'AG-113871', 'SF BEEF LLC', None, datetime.datetime(2021, 5, 4, 0, 0), datetime.datetime(2031, 5, 4, 0, 0), 'FAM040581', '6-3N-58W-35-Surface-Morgan-School', 600.0, 10, 'Rachel Turner', 'North Central', '6', 'Active', 'CO060030N0580W0SN350', None, None]
+ERROR: Unable to parse legal description: "ALL (LESS 1AC IN NENENENE DEEDED TO SCHOOL DISTRICT)"
+	Skipping row:
+	 [15, '15S', '58W', '22', 'ALL (LESS 1AC IN NENENENE DEEDED TO SCHOOL DISTRICT)', 20709, 'Agriculture', 'Multiple-Use/AG & REC', 'AG-108984', 'NATURE CONSERVANCY', 'MU 20001', datetime.datetime(2007, 3, 22, 0, 0), datetime.datetime(2032, 3, 22, 0, 0), 'FAM004391', '6-15S-58W-22-Surface-Lincoln-School', 639.0, 25, 'Justin Osborne', 'South Central', '6', 'Active', 'CO060150S0580W0SN220', None, None]
+ERROR: Unable to parse legal description: "ALL (LOTS 1-15)"
+	Skipping row:
+	 [16, '11N', '91W', '10', 'ALL (LOTS 1-15)', 10567, 'Agriculture', 'Grazing', 'AG-101877', 'JOHN PEROULIS & SONS', 'AG 47323', datetime.datetime(2014, 10, 18, 0, 0), datetime.datetime(2024, 10, 18, 0, 0), 'FAM003626', '6-11N-91W-10-Surface-Moffat-School', 615.31, 10, 'Jerod Smith', 'Northwest', '6', 'Active', 'CO060110N0910W0SN100', None, None]
+ERROR: Unable to parse legal description: "ALL (LOTS 2,4,6, 8-12, 15-18 IN RESURVEYED AREA)"
+	Skipping row:
+	 [17, '12N', '103W', '36', 'ALL (LOTS 2,4,6, 8-12, 15-18 IN RESURVEYED AREA)', 10588, 'Agriculture', 'Grazing', 'AG-101898', 'DIAMOND PEAK CATTLE COMPANY, LLC', 'AG 47355', None, None, 'FAM003966', '6-12N-103W-36-Surface-Moffat-School', 629.67, 10, 'Jerod Smith', 'Northwest', '6', 'Active', 'CO060120N1030W0SN360', None, None]
+ERROR: Unable to parse legal description: "ALL EXC Y-W PWRLNE W/WATER (ACQUIRED PAT 8148 LOST CRK EXCH)"
+	Skipping row:
+	 [19, '2N', '43W', '2', 'ALL EXC Y-W PWRLNE W/WATER (ACQUIRED PAT 8148 LOST CRK EXCH)', 867128, 'Recreation', None, 'REC-113750', 'CURE BROTHERS', None, None, datetime.datetime(2026, 8, 1, 0, 0), 'FAM001263', '6-2N-43W-2-Surface-Yuma-School', 601.0, 5, 'Wilbur Strickert', 'Northeast', '6', 'Active', 'CO060020N0430W0SN020', None, None]
+ERROR: Unable to parse legal description: "ALL LAND LYING WEST OF A DIAGONAL LINE BEGINNING AT THE NE CORNER OF SECTION 2 AND TERMINATING AT THE CENTER POINT OF SECTION 2; NW"
+	Skipping row:
+	 [20, '6N', '89W', '2', 'ALL LAND LYING WEST OF A DIAGONAL LINE BEGINNING AT THE NE CORNER OF SECTION 2 AND TERMINATING AT THE CENTER POINT OF SECTION 2; NW', 31567, 'Agriculture', 'Grazing', 'AG-109187', 'KEVIN B MURPHY, TRACY  MURPHY', None, None, None, 'FAM002289', '6-6N-89W-2-Surface-Routt-School', 240.45, 10, 'Jerod Smith', 'Northwest', '6', 'Active', 'CO060060N0890W0SN020', None, None]
+ERROR: No PLSS records found for query: FRSTDIVID = 'CO060330S0430W0SN360' AND SECDIVNO = '2' , 2nd Div: ['2']
+ERROR: No PLSS records found for query: FRSTDIVID = 'CO060040N0700W0SN160' AND SECDIVNO = '4' , 2nd Div: ['4']
+ERROR: Unable to parse legal description: "E/2SE"
+	Skipping row:
+	 [24, '4N', '68W', '36', 'E/2SE', 19301, 'Oil and Gas', 'Oil & Gas', 'OG-108342', 'BLUE CHIP OIL INC', 'OG 6116 89', datetime.datetime(1981, 4, 1, 0, 0), None, 'FAM013884', '6-4N-68W-36-Oil & Gas-Weld-School', 80.0, 5, 'Catie Stitt', 'North Central', '6', 'Active', 'CO060040N0680W0SN360', None, None]
+ERROR: Unable to parse legal description: "E/2SESE"
+	Skipping row:
+	 [25, '6N', '91W', '16', 'E/2SESE', 12938, 'Solid Mineral', 'Long Term Non Development Minerals', 'SM-102557', 'TRI-STATE GEN TRNSMSN ASSN INC', 'LT 221', datetime.datetime(1973, 6, 20, 0, 0), datetime.datetime(2023, 6, 20, 0, 0), 'FAM032619', '6-6N-91W-16-Other Minerals-Moffat-School', 20.0, 50, 'Christel Koranda', 'Northwest', '6', 'Active', 'CO060060N0910W0SN160', None, None]
+ERROR: Unable to parse legal description: "E2"
+	Skipping row:
+	 [32, '10N', '61W', '36', 'E2', 10935, 'Agriculture', 'Grazing', 'AG-101979', 'ANDREA KINNISON, BRIAN KINNISON, KENNETH EVERITT', 'AG 46957', datetime.datetime(2013, 9, 5, 0, 0), datetime.datetime(2023, 9, 5, 0, 0), 'FAM003305', '6-10N-61W-36-Surface-Weld-School', 320.0, 10, 'Rachel Turner', 'North Central', '6', 'Active', 'CO060100N0610W0SN360', None, None]
+ERROR: No PLSS records found for query: FRSTDIVID = 'CO060070S0730W0SN270' AND SECDIVNO = '64' , 2nd Div: ['64']
+ERROR: Unable to parse legal description: "E2 LOT G"
+	Skipping row:
+	 [35, '12N', '88W', '21', 'E2 LOT G', 10604, 'Agriculture', 'Grazing', 'AG-101914', 'BANJO SHEEP COMPANY, SALISBURY LIVESTOCK CO, LADDER LIVESTOCK COMPANY, LLC', 'AG 47375', datetime.datetime(2014, 10, 15, 0, 0), datetime.datetime(2024, 10, 15, 0, 0), 'FAM003870', '6-12N-88W-21-Surface-Routt-School', 53.21, 10, 'Jerod Smith', 'Northwest', '6', 'Active', 'CO060120N0880W0SN210', None, None]
+ERROR: Unable to parse legal description: "E2, E2NW, NESW"
+	Skipping row:
+	 [36, '31S', '58W', '33', 'E2, E2NW, NESW', 296854, 'Agriculture', 'Grazing', 'AG-110193', 'CHAQUACO CATTLE COMPANY LLC', None, datetime.datetime(2016, 4, 1, 0, 0), datetime.datetime(2026, 4, 1, 0, 0), 'FAM006703', '6-31S-58W-33-Surface-Las Animas-School', 440.0, 10, 'Eric Van Dyk', 'Southeast', '6', 'Active', 'CO060310S0580W0SN330', None, None]
+ERROR: Unable to parse legal description: "E2, E2NW, NWNW, NESW, ALL PARTS OF SWNW & SESW LYING E OF RCR 27"
+	Skipping row:
+	 [37, '5N', '87W', '15', 'E2, E2NW, NWNW, NESW, ALL PARTS OF SWNW & SESW LYING E OF RCR 27', 16398, 'Agriculture', 'Multiple-Use/AG & REC', 'AG-105700', 'CAMILLETTI & SONS INC', 'MU 45467', datetime.datetime(2005, 8, 23, 0, 0), datetime.datetime(2025, 8, 23, 0, 0), 'FAM002026', '6-5N-87W-15-Surface-Routt-School', 500.0, 20, 'Jerod Smith', 'Northwest', '6', 'Active', 'CO060050N0870W0SN150', None, None]
+ERROR: No PLSS records found for query: FRSTDIVID = 'CO060060N0440W0SN160' AND SECDIVNO = '8436' , 2nd Div: ['8436']
+ERROR: Unable to parse legal description: "E2, E2W2, NWNW, NWSW"
+	Skipping row:
+	 [39, '9N', '77W', '17', 'E2, E2W2, NWNW, NWSW', 1218607, 'Temporary Access Permit', None, 'TAP-115122', 'COLORADO PARKS AND WILDLIFE - STEAMBOAT', None, None, datetime.datetime(2023, 12, 31, 0, 0), 'FAM003068', '6-9N-77W-17-Surface-Jackson-School', 560.0, None, 'Jerod Smith', 'Northwest', '6', 'Active', 'CO060090N0770W0SN170', None, None]
+ERROR: Unable to parse legal description: "E2, S2NENW, SENW, N2SESW (Red Mountain)"
+	Skipping row:
+	 [40, '1N', '80W', '9', 'E2, S2NENW, SENW, N2SESW (Red Mountain)', 829189, 'Recreation', None, 'REC-113500', 'COLO DIV PARKS & WILDLIFE/PUBLIC ACCESS PROGRAM', None, None, datetime.datetime(2023, 6, 30, 0, 0), 'FAM001186', '6-1N-80W-9-Surface-Grand-School', 444.44, None, 'Abraham Medina', None, '6', 'Active', 'CO060010N0800W0SN090', None, None]
+ERROR: Unable to parse legal description: "E2, SW"
+	Skipping row:
+	 [42, '10N', '52W', '36', 'E2, SW', 831411, 'Agriculture', 'Grazing', 'AG-113523', 'DOBIE CREEK LLLP', None, datetime.datetime(2021, 3, 27, 0, 0), datetime.datetime(2031, 3, 27, 0, 0), 'FAM003265', '6-10N-52W-36-Surface-Logan-School', 480.0, 10, 'Wilbur Strickert', 'Northeast', '6', 'Active', 'CO060100N0520W0SN360', None, None]
+ERROR: No PLSS records found for query: FRSTDIVID = 'CO060150S0760W0SN130' AND SECDIVNO = '2020' , 2nd Div: ['2020']
+ERROR: No PLSS records found for query: FRSTDIVID = 'CO060070N0860W0SN130' AND SECDIVNO = '84' , 2nd Div: ['84']
+ERROR: No PLSS records found for query: FRSTDIVID = 'CO060130S0760W0SN070' AND SECDIVNO = '24' , 2nd Div: ['24']
+ERROR: Unable to parse legal description: "FP N2N3, FP E2NE"
+	Skipping row:
+	 [47, '8N', '48W', '36', 'FP N2N3, FP E2NE', 205811, 'Agriculture', 'Conservation Reserve Program', 'AG-109698', 'MARTIN L BORNHOFT, CHERI L BORNHOFT', None, None, None, 'FAM002689', '6-8N-48W-36-Surface-Logan-School', 10.16, 10, 'Wilbur Strickert', 'Northeast', '6', 'Active', 'CO060080N0480W0SN360', None, None]
+ERROR: Unable to parse legal description: "FRAC PART SWSW"
+	Skipping row:
+	 [49, '9N', '44W', '16', 'FRAC PART SWSW', 12743, 'Solid Mineral', 'Gravel Permit', 'SM-102438', 'PHILLIPS COUNTY BOARD OF COUNTY COMMISSIONERS', 'GP 3328', datetime.datetime(1998, 3, 28, 0, 0), datetime.datetime(2023, 3, 28, 0, 0), 'FAM033625', '6-9N-44W-16-Other Minerals-Sedgwick-School', 20.0, 5, 'Ben Teschner', 'Northeast', '6', 'Active', 'CO060090N0440W0SN160', None, None]
+ERROR: No PLSS records found for query: FRSTDIVID = 'CO060040S0640W0SN160' AND SECDIVNO = '30' , 2nd Div: ['29', '30']
+ERROR: No PLSS records found for query: FRSTDIVID = 'CO060070N0520W0SN170' AND SECDIVNO = '390' , 2nd Div: ['390']
+ERROR: Unable to parse legal description: "IN NE"
+	Skipping row:
+	 [53, '10S', '55W', '16', 'IN NE', 793869, 'Agriculture', 'Grazing', 'AG-113290', 'STEPHEN W MONKS, LAWRENCE A MONKS, CHARLENE K MONKS, TERESA J MONKS', None, None, None, 'FAM003442', '6-10S-55W-16-Surface-Lincoln-School', 43.4, 10, 'Justin Osborne', 'South Central', '6', 'Active', 'CO060100S0550W0SN160', None, None]
+ERROR: Unable to parse legal description: "IN THE E2NE"
+	Skipping row:
+	 [54, '15S', '58W', '31', 'IN THE E2NE', 20464, 'Road Access Permit', None, 'RAP-108889', 'FRONT RANGE PIPELINE LLC', 'SP 712', datetime.datetime(2012, 12, 6, 0, 0), datetime.datetime(2042, 12, 6, 0, 0), 'FAM004396', '6-15S-58W-31-Surface-Lincoln-School', 0.78, 30, 'Justin Osborne', 'South Central', '6', 'Active', 'CO060150S0580W0SN310', None, None]
+ERROR: Unable to parse legal description: "LOT 1 (79.48), LOT 2 (78.60), S2N2, S2 (ALL)"
+	Skipping row:
+	 [55, '5S', '65W', '1', 'LOT 1 (79.48), LOT 2 (78.60), S2N2, S2 (ALL)', 17381, 'Oil and Gas', 'Oil & Gas', 'OG-106456', 'CRESTONE PEAK RESOURCES WATKINS HOLDINGS LLC', 'OG 1960 12', datetime.datetime(2012, 4, 1, 0, 0), None, 'FAM014460', '6-5S-65W-1-Oil & Gas-Arapahoe-School', 638.08, 5, 'Christel Koranda', 'North Central', '6', 'Active', 'CO060050S0650W0SN010', None, None]
+ERROR: Unable to parse legal description: "LOT 16; ALL OF LOTS 11-12, 17 LESS PATENTS 2443 & 2965; ALL OF LOT 27, LESS PATENT 2633"
+	Skipping row:
+	 [56, '7N', '95W', '30', 'LOT 16; ALL OF LOTS 11-12, 17 LESS PATENTS 2443 & 2965; ALL OF LOT 27, LESS PATENT 2633', 883293, 'Agriculture', 'Grazing', 'AG-113915', 'DALE HASKINS', None, datetime.datetime(2021, 10, 15, 0, 0), datetime.datetime(2031, 10, 15, 0, 0), 'FAM002575', '6-7N-95W-30-Surface-Moffat-School', 74.99, 10, 'Jerod Smith', 'Northwest', '6', 'Active', 'CO060070N0950W0SN300', None, None]
+ERROR: Unable to parse legal description: "N2, N2SW, N2S2SW, SE"
+	Skipping row:
+	 [58, '31S', '66W', '16', 'N2, N2SW, N2S2SW, SE', 524362, 'Recreation', None, 'REC-111649', 'DANIEL BORREGO', None, None, datetime.datetime(2023, 8, 1, 0, 0), 'FAM006727', '6-31S-66W-16-Surface-Las Animas-School', 600.0, 5, 'Eric Van Dyk', 'Southeast', '6', 'Active', 'CO060310S0660W0SN160', None, None]
+ERROR: Unable to parse legal description: "N2NE, N2NENW, W2NW, N2NWSW"
+	Skipping row:
+	 [59, '2S', '60W', '24', 'N2NE, N2NENW, W2NW, N2NWSW', 10352, 'Agriculture', 'Grazing', 'AG-101662', 'LISA K BEAUPREZ, MARK BEAUPREZ, BRADBURY ASSOCIATES LLLP', 'AG 46752', datetime.datetime(2013, 3, 3, 0, 0), datetime.datetime(2023, 3, 3, 0, 0), 'FAM001399', '6-2S-60W-24-Surface-Adams-School', 200.0, 10, 'Rachel Turner', 'North Central', '6', 'Active', 'CO060020S0600W0SN240', None, None]
+ERROR: Unable to parse legal description: "NENE, S2NE, N2SE"
+	Skipping row:
+	 [61, '22S', '47W', '34', 'NENE, S2NE, N2SE', 890029, 'Recreation', None, 'REC-113981', 'EASTERN OUTDOORSMEN LLC', None, None, datetime.datetime(2026, 7, 15, 0, 0), 'FAM005609', '6-22S-47W-34-Surface-Prowers-Internal Improvements', 200.0, 5, 'Eric Van Dyk', 'Southeast', '6', 'Active', 'CO060220S0470W0SN340', None, None]
+ERROR: Unable to parse legal description: "NENE, S2NE, NENW, S2NW, SE"
+	Skipping row:
+	 [62, '11N', '103W', '10', 'NENE, S2NE, NENW, S2NW, SE', 21492, 'Agriculture', 'Grazing', 'AG-109015', 'VERMILLION RANCH LIMITED PARTNERSHIP', None, datetime.datetime(2014, 10, 18, 0, 0), datetime.datetime(2024, 10, 18, 0, 0), 'FAM003733', '6-11N-103W-10-Surface-Moffat-School', 400.0, 10, 'Jerod Smith', 'Northwest', '6', 'Active', 'CO060110N1030W0SN100', None, None]
+ERROR: Unable to parse legal description: "NWNE, N2SW, S2SE"
+	Skipping row:
+	 [63, '9N', '78W', '4', 'NWNE, N2SW, S2SE', 1218607, 'Temporary Access Permit', None, 'TAP-115122', 'COLORADO PARKS AND WILDLIFE - STEAMBOAT', None, None, datetime.datetime(2023, 12, 31, 0, 0), 'FAM003080', '6-9N-78W-4-Surface-Jackson-School', 198.17, None, 'Jerod Smith', 'Northwest', '6', 'Active', 'CO060090N0780W0SN040', None, None]
+ERROR: No PLSS records found for query: FRSTDIVID = 'CO060120N0880W0SN210' AND SECDIVNO = '45' , 2nd Div: ['45']
+ERROR: Unable to parse legal description: "W2NENE; W2NE; SENE; N2 SE"
+	Skipping row:
+	 [66, '10N', '78W', '14', 'W2NENE; W2NE; SENE; N2 SE', 292755, 'Agriculture', 'Grazing', 'AG-110137', 'SILVER SPUR OPERATING COMPANY, LLC', None, datetime.datetime(2016, 5, 31, 0, 0), datetime.datetime(2026, 5, 31, 0, 0), 'FAM008297', '6-10N-78W-14-Surface-Jackson-Multi-Beneficiary (Forest)', 220.0, 10, 'Jerod Smith', 'Northwest', '6', 'Active', 'CO060100N0780W0SN140', None, None]
+WARNING: See PLSS error file for records with no PLSS match
+Performing dissolve on Transaction_Number field
+Creating new lease layer
+Merging data from lease table with dissolve layer
+Script completed
