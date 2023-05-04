@@ -6,7 +6,7 @@ source_folder = r'C:\Users\shawn\DataScienceMaster\Code\SLB\As_Built'
 target_folder = r'C:\Users\shawn\DataScienceMaster\Code\SLB\As_Built_Extracted'
 
 if not os.path.exists(target_folder):
-    os.makedirs(target_folder)f
+    os.makedirs(target_folder)
 
 for root, dirs, files in os.walk(source_folder):
     for file in files:
