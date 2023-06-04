@@ -1,29 +1,32 @@
 from bs4 import BeautifulSoup
 
 def extract_info(xml_doc):
-    soup = BeautifulSoup(xml_doc, 'lxml')  # Use 'lxml' parser as it's suitable for both HTML and XML documents
+    soup = BeautifulSoup(xml_doc, 'lxml')
     
-    # Find the title and div elements
+    items = []
+    
+    # Assuming every <title> is followed by a <div class='field-item even'>
     titles = soup.find_all('title')
-    divs = soup.find_all('div', class_='field-item even')
+    for title in titles:
+        div = title.find_next('div', class_='field-item even')
+        items.append((title, div))
     
-    return titles, divs
+    return items
 
-def write_to_file(titles, divs, filename):
-    with open(filename, 'w') as f:
-        for title in titles:
+def write_to_file(items, filename):
+    with open(filename, 'w', encoding='utf-8') as f:
+        for title, div in items:
             f.write(str(title) + '\n')
-        
-        for div in divs:
-            f.write(str(div) + '\n')
+            if div:
+                f.write(str(div) + '\n')
+            f.write('\n')  # separate each pair by a newline
 
 def main():
-    # Replace with your XML file
-    with open('posts_debbierosas.wordpress.2023-05-22.xml', 'r') as f:
+    with open('posts_debbierosas.wordpress.2023-05-22.xml', 'r', encoding='utf-8') as f:
         xml_doc = f.read()
     
-    titles, divs = extract_info(xml_doc)
-    write_to_file(titles, divs, 'Debbie_Rosas_Posts.txt')
+    items = extract_info(xml_doc)
+    write_to_file(items, 'Debbie_Rosas_Posts.txt')
 
 if __name__ == "__main__":
     main()
