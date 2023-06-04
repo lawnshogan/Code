@@ -9,16 +9,18 @@ def extract_info(xml_doc):
     titles = soup.find_all('title')
     for title in titles:
         div = title.find_next('div', class_='field-item even')
-        items.append((title, div))
+        items.append((title.text, div.text if div else None))  # use .text to get text without html tags
     
     return items
 
 def write_to_file(items, filename):
     with open(filename, 'w', encoding='utf-8') as f:
         for title, div in items:
-            f.write(str(title) + '\n')
+            f.write(title + '\n')
+            # add 5 line breaks
+            f.write('\n'*5)
             if div:
-                f.write(str(div) + '\n')
+                f.write(div + '\n')
             f.write('\n')  # separate each pair by a newline
 
 def main():
@@ -30,3 +32,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
