@@ -1,35 +1,34 @@
 from bs4 import BeautifulSoup
 
-def extract_info(xml_doc):
-    soup = BeautifulSoup(xml_doc, 'lxml')
-    
+def extract_info(text):
+    soup = BeautifulSoup(text, 'lxml')
+
     items = []
-    
-    # Assuming every <title> is followed by a <div class='field-item even'>
+
     titles = soup.find_all('title')
-    for title in titles:
-        div = title.find_next('div', class_='field-item even')
-        items.append((title.text, div.text if div else None))  # use .text to get text without html tags
-    
+    contents = soup.find_all('content:encoded')
+    for title, content in zip(titles, contents):
+        cleaned_title = title.text.replace("<![CDATA[", "").replace("]]>", "").strip()
+        cleaned_content = content.text.replace("<![CDATA[", "").replace("]]>", "").strip()
+        items.append((cleaned_title, cleaned_content))
+
     return items
 
 def write_to_file(items, filename):
     with open(filename, 'w', encoding='utf-8') as f:
-        for title, div in items:
+        for title, content in items:
             f.write(title + '\n')
-            # add 5 line breaks
-            f.write('\n'*5)
-            if div:
-                f.write(div + '\n')
-            f.write('\n')  # separate each pair by a newline
+            f.write('\n')  # Adds a line break between the title and the content
+            f.write(content + '\n')
+            # add 5 line breaks between each item and the next title
+            f.write('\n'*6)  # separate each pair by 6 newlines
 
 def main():
-    with open('posts_debbierosas.wordpress.2023-05-22.xml', 'r', encoding='utf-8') as f:
-        xml_doc = f.read()
-    
-    items = extract_info(xml_doc)
-    write_to_file(items, 'Debbie_Rosas_Posts.txt')
+    with open('C:\\Users\\shawn\\DataScienceMaster\\Code\\SLB\\XML_Extract\\TEST.txt', 'r', encoding='utf-8') as f:
+        text = f.read()
+
+    items = extract_info(text)
+    write_to_file(items, 'C:\\Users\\shawn\\DataScienceMaster\\Code\\SLB\\XML_Extract\\Extracted_Text.txt')
 
 if __name__ == "__main__":
     main()
-
